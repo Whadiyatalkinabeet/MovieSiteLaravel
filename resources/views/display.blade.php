@@ -90,13 +90,7 @@
             @foreach ($movies as $movie)
 
 
-            
-             <a href="{{ url('/details/' . $movie->id) }}" style=" background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-size: 20px;
-                font-weight: 600;
-                border-color: #fff;">>{{ $movie->original_title }}</a>
+          
             
 
             @endforeach
