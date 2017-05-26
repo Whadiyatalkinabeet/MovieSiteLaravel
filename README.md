@@ -1,5 +1,5 @@
 # MovieSiteLaravel 
-Fully working log in system. Documentation - https://laravel.com/docs/5.4/authentication#authentication-quickstart
+A copy of an older php project rewritten using Laravel.
 
 To clone and run locally (From https://stackoverflow.com/questions/38602321/cloning-laravel-project-from-github):
 
