@@ -6,7 +6,7 @@ To clone and run locally (From https://stackoverflow.com/questions/38602321/clon
 1. Download the project
 2. Go to the file using cd
 3. Type composer install
-4. Download a new .env template and place in the root directory of the project - https://github.com/laravel/laravel/blob/master/.env.example (env contains sensetive database information and is never pushed to github.)
+4. Download a new .env template and place in the root directory of the project - https://github.com/laravel/laravel/blob/master/.env.example (env contains sensitive database information and is never pushed to github.)
 5. Type php artisan key:generate
 6. Open the .env file and change the database name to whatever you have, username to root and leave the password field empty.
 7. Type php artisan migrate
