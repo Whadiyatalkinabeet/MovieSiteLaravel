@@ -106,7 +106,7 @@
            
 
                 <div class="links">
-                    <a href="https://github.com/Whadiyatalkinabeet/MovieAppLaravel">GitHub</a>
+                    <a href="https://github.com/Whadiyatalkinabeet/MovieSiteLaravel">GitHub</a>
                 </div>
             </div>
         </div>

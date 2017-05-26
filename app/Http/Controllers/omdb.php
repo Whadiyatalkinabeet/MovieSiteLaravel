@@ -26,12 +26,20 @@ class omdb extends Controller
     	$result = $client->request('GET','https://api.themoviedb.org/3/movie/' . $movie_id . '?api_key=88f87340c5e056d757ff6fd53a51ddff&language=en-US');
 
 
+    	//process movie details
     	$details = json_decode($result->getBody());
 
-    
-    	
-    	return view('/display', ['details'=>json_encode($details)]);
-    	
-    
+
+    	//get configuration for tmdb images
+    	$result = $client->request('GET', 'https://api.themoviedb.org/3/configuration?api_key=88f87340c5e056d757ff6fd53a51ddff');
+
+    	$config = json_decode($result->getBody());
+
+    	$config = $config->images->base_url;
+
+    	return view('display', ['details'=>json_encode($details), 'config' => json_encode($config)]);
+
     }
+
+
 }

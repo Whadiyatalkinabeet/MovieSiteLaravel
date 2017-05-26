@@ -83,24 +83,20 @@
                 </div>
 
             @php
-                $movies = json_decode($movies);
+                $details = json_decode($details);
+                $config = json_decode($config);
+
+                $path = $config . "/original/" . $details->poster_path;
+
             @endphp
 
-
-            @foreach ($movies as $movie)
-
-
-          
-            
-
-            @endforeach
-            
-            
-
+            <p>{{ $details->original_title }}</p>
+            <p>{{ $details->overview }}</p>
+            <a href="{{ $details->homepage }}">Homepage</a>
            
 
                 <div class="links">
-                    <a href="https://github.com/Whadiyatalkinabeet/MovieAppLaravel">GitHub</a>
+                    <a href="https://github.com/Whadiyatalkinabeet/MovieSiteLaravel">GitHub</a>
                 </div>
             </div>
         </div>
