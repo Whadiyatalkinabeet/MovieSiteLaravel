@@ -1,6 +1,8 @@
 # MovieSiteLaravel 
 A copy of an older php project rewritten using Laravel.
 
+We should convert the site to use MongoDB rather than mySQL, it will make it a lot easier to store users and their favourites. 
+
 To clone and run locally (From https://stackoverflow.com/questions/38602321/cloning-laravel-project-from-github):
 
 1. Download the project
