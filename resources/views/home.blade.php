@@ -7,14 +7,13 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    You are logged in!
-                </div>
-
+               
                 @if (Auth::guest())
-
-                    <button style="margin: auto;">Login</button>
+                    <p>You should make an account and start adding favourites!</p>
                 @else 
+                     <div class="panel-body">
+                        You are logged in!
+                    </div>
 
                     @php
                         $movies = json_decode($movies);
@@ -23,9 +22,8 @@
 
                     @foreach ($movies as $movie)
 
-
-            
-                         <form action="/add" method="get">
+                        <form action="/addF" method="get">
+                                {{ csrf_field() }}
 
                                 <input type="hidden" name="movie_title" value="{{ $movie->original_title }}"/>
                                 <input type="hidden" name="user" value="{{ Auth::user()->name }}"/>
@@ -36,7 +34,8 @@
                     @endforeach
 
                         <form action="/getF" method="get">
-                            
+                            {{ csrf_field() }}
+
                             <input type="hidden" name="user" value="{{ Auth::user()->name }}"/>
 
                             <input type="submit" name="submit" value="Go to Favourites"/>

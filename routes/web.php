@@ -10,16 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'omdb@request');    
-
-
 Auth::routes();
+
+//-----------------OMDB routes-------------------//
+Route::get('/', 'omdb@request');    
 
 Route::get('/home', 'omdb@request');
 
 Route::get('/details/{movie_id}', 'omdb@getDetails');
+//-----------------OMDB routes-------------------//
 
-Route::get('/add', 'omdb@insertFavourite');
+//----------------favourites routes--------------//
+Route::get('/addF', 'favourites@insertFavourite');
 
-Route::get('/getF', 'omdb@getFavourites');
+Route::get('/getF', 'favourites@getFavourites');
+
+Route::post('/deleteF', 'favourites@deleteFavourite');
+//----------------favourites routes--------------//

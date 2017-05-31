@@ -30,10 +30,7 @@ class omdb extends Controller
 
         $users = User::first();
 
-        
-
-
-    	//process movie details
+        //process movie details
     	$details = json_decode($result->getBody());
 
 
@@ -48,47 +45,8 @@ class omdb extends Controller
 
     }
 
-    public function getFavourites(Request $request){
 
 
-
-        $user = User::where('name', $request->user)->first();
-
-        $favourites = $user->favourites;
-
-
-      
-
-        return view('favourites')->with('favourites', $favourites);
-    }
-
-    public function insertFavourite(Request $request){
-
-        $user = User::where('name', $request->user)->first();
-
-        $movie = $request->movie_title;
-
-        
-
-        if($user->favourites){
-            //if favourites array already exists
-            $newFavourite = [$movie];
-            $user->favourites = array_merge($user->favourites, $newFavourite);
-
-        } else{
-            //if favourites array doesn't exist
-            $user->favourites = [$movie];
-        }
-
-
-        $user->save();
-
-        $favourites = $user->favourites;
-        
-
-        return $this->request();
-
-    }
 
 
 }
