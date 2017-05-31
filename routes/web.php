@@ -16,6 +16,10 @@ Route::get('/', 'omdb@request');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'omdb@request');
 
 Route::get('/details/{movie_id}', 'omdb@getDetails');
+
+Route::get('/add', 'omdb@insertFavourite');
+
+Route::get('/getF', 'omdb@getFavourites');

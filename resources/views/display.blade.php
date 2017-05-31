@@ -85,11 +85,12 @@
             @php
                 $details = json_decode($details);
                 $config = json_decode($config);
-
+                $users = json_decode($users);
                 $path = $config . "/original/" . $details->poster_path;
 
             @endphp
 
+            <p>{{ $users->name }}</p>
             <p>{{ $details->original_title }}</p>
             <p>{{ $details->overview }}</p>
             <a href="{{ $details->homepage }}">Homepage</a>
