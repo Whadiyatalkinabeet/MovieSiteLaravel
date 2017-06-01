@@ -18,6 +18,8 @@ Route::get('/', 'omdb@request');
 Route::get('/home', 'omdb@request');
 
 Route::get('/details/{movie_id}', 'omdb@getDetails');
+
+Route::get('/search', 'omdb@search');
 //-----------------OMDB routes-------------------//
 
 //----------------favourites routes--------------//

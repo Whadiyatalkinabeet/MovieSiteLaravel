@@ -18,7 +18,6 @@ class omdb extends Controller
     	$movies = json_decode($result->getBody())->results;
 
     	
-
     	return view('home',['movies'=>json_encode($movies)]);
     }
 
@@ -43,6 +42,20 @@ class omdb extends Controller
 
     	return view('display', ['details'=>json_encode($details), 'config' => json_encode($config), 'users'=>json_encode($users)]);
 
+    }
+
+    public function search(Request $request){
+
+        $query = $request->input('query');
+
+        $client = new Client();
+        $result = $client->request('GET', 'https://api.themoviedb.org/3/search/movie?api_key=88f87340c5e056d757ff6fd53a51ddff&language=en-US&query=' . $query .'&page=1&include_adult=false');
+
+        $search = json_decode($result->getBody());
+
+
+
+        return view('search', ['results'=>json_encode($search->results), 'query'=>$query]);
     }
 
 
